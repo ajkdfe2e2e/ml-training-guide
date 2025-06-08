@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基于面向对象的大模型训练指南</title>
+    <meta name="description" content="深入浅出地学习如何运用面向对象编程思想进行大型语言模型的训练和开发">
+    <meta name="keywords" content="面向对象,大模型,机器学习,深度学习,人工智能,训练指南,教程">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>大模型训练指南</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">首页</a></li>
+                <li><a href="#overview" class="nav-link">概述</a></li>
+                <li><a href="#fundamentals" class="nav-link">基础知识</a></li>
+                <li><a href="#practice" class="nav-link">实践项目</a></li>
+                <li><a href="#resources" class="nav-link">资源下载</a></li>
+                <li><a href="#contact" class="nav-link">联系我们</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主页部分 -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="neural-network"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                基于面向对象的<br>
+                <span class="highlight">大模型训练指南</span>
+            </h1>
+            <p class="hero-subtitle">深入浅出地学习如何运用面向对象编程思想进行大型语言模型的训练和开发</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">章节课程</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">代码示例</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">实践项目</span>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#overview" class="btn btn-primary">
+                    <i class="fas fa-play"></i>
+                    开始学习
+                </a>
+                <a href="#resources" class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    下载资源
+                </a>
+            </div>
+        </div>
+        
+        <!-- 语音朗读控制 -->
+        <div class="voice-control">
+            <button id="voiceToggle" class="voice-btn" title="语音朗读">
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- 概述部分 -->
+    <section id="overview" class="overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>课程概述</h2>
+                <p>全面系统地学习面向对象编程在大模型训练中的应用</p>
+            </div>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>面向对象基础</h3>
+                    <p>深入理解类、对象、继承、封装、多态等核心概念，为大模型开发打下坚实基础</p>
+                    <ul>
+                        <li>类与对象的设计模式</li>
+                        <li>继承与组合的使用场景</li>
+                        <li>封装原则在ML中的应用</li>
+                        <li>多态性的实际运用</li>
+                    </ul>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>神经网络架构</h3>
+                    <p>运用面向对象思想设计和实现各种神经网络架构，提高代码可维护性</p>
+                    <ul>
+                        <li>基础神经网络层的类设计</li>
+                        <li>Transformer架构的OOP实现</li>
+                        <li>自定义层和激活函数</li>
+                        <li>模型组件的模块化设计</li>
+                    </ul>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>训练流程管理</h3>
+                    <p>构建高效、可扩展的训练管道，实现大模型的端到端训练</p>
+                    <ul>
+                        <li>数据加载器的类设计</li>
+                        <li>训练器与验证器架构</li>
+                        <li>损失函数和优化器封装</li>
+                        <li>分布式训练的实现</li>
+                    </ul>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>性能优化</h3>
+                    <p>掌握大模型训练的性能优化技巧，提升训练效率和模型性能</p>
+                    <ul>
+                        <li>内存管理和梯度优化</li>
+                        <li>混合精度训练</li>
+                        <li>模型并行化策略</li>
+                        <li>推理加速技术</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 基础知识部分 -->
+    <section id="fundamentals" class="fundamentals">
+        <div class="container">
+            <div class="section-header">
+                <h2>基础知识</h2>
+                <p>从零开始掌握面向对象编程在机器学习中的应用</p>
+            </div>
+
+            <div class="curriculum">
+                <div class="curriculum-nav">
+                    <button class="curriculum-tab active" data-tab="oop">面向对象基础</button>
+                    <button class="curriculum-tab" data-tab="ml">机器学习基础</button>
+                    <button class="curriculum-tab" data-tab="deep">深度学习架构</button>
+                    <button class="curriculum-tab" data-tab="advanced">高级主题</button>
+                </div>
+
+                <div class="curriculum-content">
+                    <div id="oop" class="curriculum-panel active">
+                        <h3>面向对象编程基础</h3>
+                        <div class="lesson-list">
+                            <div class="lesson-item">
+                                <div class="lesson-number">01</div>
+                                <div class="lesson-content">
+                                    <h4>类与对象的基本概念</h4>
+                                    <p>理解类和对象的关系，掌握属性和方法的定义</p>
+                                    <div class="lesson-tags">
+                                        <span class="tag">基础</span>
+                                        <span class="tag">30分钟</span>
+                                    </div>
+                                </div>
+                                <button class="lesson-play" data-text="类与对象是面向对象编程的核心概念。类是对象的蓝图，定义了对象的属性和行为。" title="播放语音">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+
+                            <div class="lesson-item">
+                                <div class="lesson-number">02</div>
+                                <div class="lesson-content">
+                                    <h4>继承与多态</h4>
+                                    <p>学习继承机制和多态性，提高代码复用性</p>
+                                    <div class="lesson-tags">
+                                        <span class="tag">中级</span>
+                                        <span class="tag">45分钟</span>
+                                    </div>
+                                </div>
+                                <button class="lesson-play" data-text="继承允许我们创建基于现有类的新类，继承其属性和方法。多态性使得同一接口可以处理不同类型的对象。" title="播放语音">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="ml" class="curriculum-panel">
+                        <h3>机器学习基础</h3>
+                        <div class="lesson-list">
+                            <div class="lesson-item">
+                                <div class="lesson-number">04</div>
+                                <div class="lesson-content">
+                                    <h4>数据处理类设计</h4>
+                                    <p>构建可重用的数据预处理和特征工程类</p>
+                                    <div class="lesson-tags">
+                                        <span class="tag">实用</span>
+                                        <span class="tag">50分钟</span>
+                                    </div>
+                                </div>
+                                <button class="lesson-play" data-text="数据处理是机器学习的第一步。我们将学习如何设计可重用的数据处理类。" title="播放语音">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="deep" class="curriculum-panel">
+                        <h3>深度学习架构</h3>
+                        <div class="lesson-list">
+                            <div class="lesson-item">
+                                <div class="lesson-number">06</div>
+                                <div class="lesson-content">
+                                    <h4>神经网络层的类设计</h4>
+                                    <p>实现各种神经网络层的面向对象设计</p>
+                                    <div class="lesson-tags">
+                                        <span class="tag">核心</span>
+                                        <span class="tag">70分钟</span>
+                                    </div>
+                                </div>
+                                <button class="lesson-play" data-text="神经网络层是深度学习的基本构建块。我们将学习如何设计各种层的类结构。" title="播放语音">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="advanced" class="curriculum-panel">
+                        <h3>高级主题</h3>
+                        <div class="lesson-list">
+                            <div class="lesson-item">
+                                <div class="lesson-number">08</div>
+                                <div class="lesson-content">
+                                    <h4>分布式训练架构</h4>
+                                    <p>设计支持多GPU和多节点的训练框架</p>
+                                    <div class="lesson-tags">
+                                        <span class="tag">专家</span>
+                                        <span class="tag">120分钟</span>
+                                    </div>
+                                </div>
+                                <button class="lesson-play" data-text="分布式训练是大模型训练的关键技术。我们将学习如何设计可扩展的分布式训练架构。" title="播放语音">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实践项目部分 -->
+    <section id="practice" class="practice">
+        <div class="container">
+            <div class="section-header">
+                <h2>实践项目</h2>
+                <p>通过实际项目深入理解理论知识的应用</p>
+            </div>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>简单神经网络框架</h3>
+                        <p>从零开始构建一个简单的神经网络框架，理解基础概念</p>
+                        <div class="project-level">初级</div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>文本分类系统</h3>
+                        <p>构建一个完整的文本分类系统，包含数据处理和模型训练</p>
+                        <div class="project-level">中级</div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Mini-GPT实现</h3>
+                        <p>实现一个小型的GPT模型，深入理解Transformer架构</p>
+                        <div class="project-level">高级</div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>分布式训练框架</h3>
+                        <p>开发支持多GPU训练的分布式框架，处理大规模模型</p>
+                        <div class="project-level">专家</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资源下载部分 -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>资源下载</h2>
+                <p>获取课程所需的代码、数据集和相关资料</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>源代码</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li><a href="#" class="resource-link"><span>完整项目代码包</span><i class="fas fa-download"></i></a></li>
+                        <li><a href="#" class="resource-link"><span>神经网络基础框架</span><i class="fas fa-download"></i></a></li>
+                        <li><a href="#" class="resource-link"><span>Transformer实现代码</span><i class="fas fa-download"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-category">
+                    <div class="category-header">
+                        <i class="fas fa-database"></i>
+                        <h3>数据集</h3>
+                    </div>
+                    <ul class="resource-list">
+                        <li><a href="#" class="resource-link"><span>文本分类数据集</span><i class="fas fa-download"></i></a></li>
+                        <li><a href="#" class="resource-link"><span>语言建模数据集</span><i class="fas fa-download"></i></a></li>
+                        <li><a href="#" class="resource-link"><span>预训练词向量</span><i class="fas fa-download"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们部分 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>联系我们</h2>
+                <p>有任何问题或建议，欢迎与我们联系</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>学习社区</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>邮箱</strong>
+                            <span>llm-training@example.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <strong>GitHub</strong>
+                            <span>github.com/ajkdfe2e2e/ml-training-guide</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>发送消息</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">消息内容</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            发送消息
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>基于面向对象的大模型训练指南</h3>
+                    <p>致力于推广面向对象编程在人工智能领域的最佳实践</p>
+                    <div class="social-links">
+                        <a href="https://github.com/ajkdfe2e2e/ml-training-guide" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#overview">课程概述</a></li>
+                        <li><a href="#fundamentals">基础知识</a></li>
+                        <li><a href="#practice">实践项目</a></li>
+                        <li><a href="#resources">资源下载</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 基于面向对象的大模型训练指南. 保留所有权利.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
